@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import Header from './components/header';
+
 class App extends Component {
   render() {
     return (
       <div className="app">
        <header>
-          <div className='wrapper'>
-            <h1>Notes App  </h1>
-          </div>
+          <Header />
        </header>
       <div className= 'container'>
         <section className= 'add-item'>
