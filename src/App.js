@@ -10,10 +10,29 @@ class App extends Component {
     this.state = {
       title: '',
       content: '',
-      notes: ''
+      notes: []
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    const notesRef = firebase.database().ref('notes');
+    notesRef.on('value', (snapshot) => {
+      let notes = snapshot.val();
+      let newState = [];
+      for(let note in notes) {
+        newState.push({
+          id: note,
+          title: notes[note].title,
+          content: notes[note].content
+        });
+      }
+      this.setState({
+        notes: newState
+      })
+    })
+
   }
 
   handleChange(e) {
