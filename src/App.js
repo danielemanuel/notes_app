@@ -50,12 +50,21 @@ class App extends Component {
       content: this.state.content
     }
 
+    if(this.state.title === '' && this.state.content === '' ){
+      alert("Please fill in at least one of the fields !!!")
+    }
+    
     notesRef.push(note);
     this.setState({
       title:'',
       content: ''
      
     })
+  }
+
+  removeNote(id) {
+    const noteRef = firebase.database().ref('/items/${itemId}');
+    noteRef.remove();
   }
 
   render() {
@@ -87,7 +96,7 @@ class App extends Component {
             <br />
             <button> Add Note</button>
           </form>
-          <section className='display-item'>
+        <section className='display-item'>
             <div className='wrapper'>
               <ul>
                 {
