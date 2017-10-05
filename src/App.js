@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import firebase from './firebase'; 
 import './App.css';
 
 import Header from './components/header';
@@ -8,14 +9,32 @@ class App extends Component {
     super() 
     this.state = {
       title: '',
-      content: ''
+      content: '',
+      notes: ''
     }
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(e) {
     this.setState({
       [e.target.name]: e.target.value
+    })
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const notesRef = firebase.database().ref('notes');
+    const note = {
+      title: this.state.title,
+      content: this.state.content
+    }
+
+    notesRef.push(note);
+    this.setState({
+      title:'',
+      content: ''
+     
     })
   }
 
@@ -27,7 +46,7 @@ class App extends Component {
        </header>
       <div className= 'container'>
         <section className= 'add-item'>
-          <form>
+          <form onSubmit={this.handleSubmit} >
             <input 
               className='title' 
               type='text' 
