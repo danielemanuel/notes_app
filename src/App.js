@@ -3,6 +3,7 @@ import firebase from './firebase';
 import './App.css';
 
 import Header from './components/header';
+import Notes from './components/notes';
 
 class App extends Component {
   constructor() {
@@ -89,10 +90,18 @@ class App extends Component {
           <section className='display-item'>
             <div className='wrapper'>
               <ul>
-
-
+                {
+                  this.state.notes.map(note => {
+                    return(
+                      <Notes 
+                        key ={note.id} 
+                        title={note.title}
+                        content={note.content}
+                        />
+                    )
+                  })
+                }
               </ul>
-
             </div>
           </section>
         </section>
