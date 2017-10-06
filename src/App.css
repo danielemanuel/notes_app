@@ -10,15 +10,142 @@
   
 }
 
-.home-container {
-  position: fixed; /* or absolute */
-  top: 20%;
-  left: 50%;
-  bottom: 20%;
+.notesNavbar {
+    animation: 2s ease-out 0s 2 slideInFromLeft;
+    background: grey;
+    padding: 20px;
+    font-style: oblique;
+    font-family:Courier, Monaco, monospace;
+}
+
+.notesMessage {
+  padding-left: 20%;
+}
+.home-page {
+  position: fixed; 
+  min-width: 100%;
+  min-height: 100%;
+  background: red;
+  font-family:Courier, Monaco, monospace;  
+  margin-top: 0px;
+  font-size: 21px;
+  text-align: center;
+  animation: fadein 5s;
+  -moz-animation: fadein 5s; /* Firefox */
+  -webkit-animation: fadein 5s; /* Safari and Chrome */
+  -o-animation: fadein 5s; /* Opera */
 }
 
 .link {
-  margin-left: 20%;
+  margin-left: 40%;
   
 }
 
+.link:hover {
+  color: grey;
+  font-size: 150%;
+}
+.welcomeMessage {
+  padding-top: 20%;
+}
+
+.navbar {
+  position: fixed; 
+  min-width: 20%;
+  min-height: 100%;
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.navbar {  
+  /* This section calls the slideInFromLeft animation we defined above */
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+  
+  background: red;
+  padding: 30px;
+}
+
+@keyframes fadein {
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-moz-keyframes fadein { /* Firefox */
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-o-keyframes fadein { /* Opera */
+  from {
+      opacity:0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+.other {
+  position: fixed; 
+  min-width: 100%;
+  min-height: 100%;
+  background: red;
+  margin-top: 25px;
+  font-size: 21px;
+  text-align: center;
+  animation: fadein 2s;
+  -moz-animation: fadein 2s; /* Firefox */
+  -webkit-animation: fadein 2s; /* Safari and Chrome */
+  -o-animation: fadein 2s; /* Opera */
+}
+@keyframes fadein {
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-moz-keyframes fadein { /* Firefox */
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-o-keyframes fadein { /* Opera */
+  from {
+      opacity:0;
+  }
+  to {
+      opacity: 1;
+  }
+}

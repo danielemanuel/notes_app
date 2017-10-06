@@ -22,7 +22,7 @@ export default class Notes extends Component {
                     <h3> { this.props.title } </h3>
                     <p> { this.props.content }</p>
                    
-                    <button onClick={() => this.removeNote()}> Remove Note</button>
+                    <button onClick={this.props.removeNote}> Remove Note</button>
                     <button onClick={() => this.simpleDialog.show()}>View Notel</button>
                     <SkyLight hideOnOverlayClicked ref={ref => this.simpleDialog = ref} title={this.props.title} >
                             {this.props.content}

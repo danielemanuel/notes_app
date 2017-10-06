@@ -70,6 +70,49 @@ class App extends Component {
     })
   }
 
+  displayNotes() {
+   return( <ul>
+    {
+      this.state.notes.map(note => {
+       
+         return (                      
+           <Notes 
+               key={note.id} 
+               title={note.title}
+               content={note.content}
+               noteId= {note.id}
+               removeNote = {() => this.removeNote(note.id) }
+           />
+              )
+          })
+     }
+        </ul>  
+   )}
+
+  notesForm() {
+    return( <form onSubmit={this.handleSubmit} >
+        <input 
+          className='title' 
+          type='text' 
+          name='title'
+          placeholder='Insert title...'
+          onChange={this.handleChange}
+          value={this.state.title} />
+        <br /><br />
+        <input  
+          className='content' 
+          type='text' 
+          name='content' 
+          placeholder='Insert content...'
+          onChange={this.handleChange} 
+          value={this.state.content}/>
+        <br />
+        <br />
+        <button> Add Note</button>
+    </form>
+    )
+  }
+
   removeNote(Id) {   
     const noteRef = firebase.database().ref(`/notes/${Id}` );
     noteRef.remove();
@@ -77,62 +120,20 @@ class App extends Component {
   
   render() {
     return (
-      <div className="app">
-       <header>
-          <Header />          
-       </header>
-      <div className= 'container'>
-        <section className= 'add-item'>
-          <form onSubmit={this.handleSubmit} >
-            <input 
-              className='title' 
-              type='text' 
-              name='title'
-              placeholder='Insert title...'
-              onChange={this.handleChange}
-              value={this.state.title} />
-            <br />
-            <br />
-            <input  
-              className='content' 
-              type='text' 
-              name='content' 
-              placeholder='Insert content...'
-              onChange={this.handleChange} 
-              value={this.state.content}/>
-            <br />
-            <br />
-            <button> Add Note</button>
-          </form>
-        
-        <section className='display-item'>
-        
-            <div className='wrapper'>
-            
-              <ul>
-                {
-                  this.state.notes.map(note => {
-                   
-                     return (                      
-                       <Notes 
-                           key={note.id} 
-                           title={note.title}
-                           content={note.content}
-                           noteId= {note.id}
-                           removeNote = {() => this.removeNote(note.id) }
-                       />
-                      )
-                  })
-                }
-              </ul>              
-            </div>
-            
+      <div>
+        <Header />          
+      <div className="app">       
+        <div className= 'container'>
+          <section className= 'add-item'>
+            { this.notesForm()}
+          <section className='display-item'>
+              <div className='wrapper'>
+              { this.displayNotes()}        
+              </div>
+            </section>
           </section>
-        
-        </section>
-
+        </div>
       </div>
-
       </div>
     );
   }

@@ -4,8 +4,8 @@ export default class Header extends Component {
 
     render() {
         return (
-            <div className='wrapper'>
-                <h1>Notes App  </h1>
+            <div className='notesNavbar'>
+                <h1 className='notesMessage' > Your Notes Keeper  </h1>
           </div>
         )
     }
