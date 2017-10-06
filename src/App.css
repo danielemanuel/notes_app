@@ -40,7 +40,7 @@ ul {
   list-style: none;
 }
 .wrapper {
-  padding: 3% 0% 0% 2%;
+  padding: 3% 3% 0% 2%;
   font-family:Courier, Monaco, monospace; 
   animation: fadein 3s;
   -moz-animation: fadein 3s; 

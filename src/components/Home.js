@@ -1,9 +1,8 @@
-import React, {Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default class Home extends Component {
+const Home = () => {
 
-    render() {
         return (
             <div className='home-page' >
                 <h1 className='welcomeMessage' >Welcome to Notes Keeper </h1>
@@ -11,5 +10,6 @@ export default class Home extends Component {
                 <Link className='link' to='/notes' >Add your thoughts in here ...</Link>
           </div>
         )
-    }
 }
+
+export default Home;
