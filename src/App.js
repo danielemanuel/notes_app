@@ -6,6 +6,7 @@ import SkyLight from 'react-skylight';
 
 import Header from './components/Header';
 import Notes from './components/Notes';
+const ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
 class App extends Component {
   constructor() {
@@ -126,7 +127,7 @@ class App extends Component {
           { this.notesForm()}
         </div>
         <div className='wrapper'>
-          { this.displayNotes()}        
+          { this.displayNotes()}                  
         </div>
       </div>
     );

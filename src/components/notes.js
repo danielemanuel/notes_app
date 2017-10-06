@@ -24,7 +24,7 @@ export default class Notes extends Component {
                     <div className='divider'></div>
                     <button className='viewNoteButton' onClick={() => this.simpleDialog.show()}>View Note</button>
                     <SkyLight hideOnOverlayClicked ref={ref => this.simpleDialog = ref} title={this.props.title} >
-                            {this.props.content}
+                         Note Content: <hr />   {this.props.content}
                     </SkyLight>
                  </li>
           </div>
