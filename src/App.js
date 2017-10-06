@@ -98,7 +98,7 @@ class App extends Component {
           placeholder='Insert title...'
           onChange={this.handleChange}
           value={this.state.title} />
-        <br /><br />
+          <br /><br />
         <input  
           className='content' 
           type='text' 
@@ -108,7 +108,7 @@ class App extends Component {
           value={this.state.content}/>
         <br />
         <br />
-        <button> Add Note</button>
+        <button className='buttonAddNote' > Add Note</button>
     </form>
     )
   }
@@ -120,20 +120,17 @@ class App extends Component {
   
   render() {
     return (
-      <div>
+      <div >
         <Header />          
       <div className="app">       
-        <div className= 'container'>
-          <section className= 'add-item'>
+        
             { this.notesForm()}
-          <section className='display-item'>
+        </div>
               <div className='wrapper'>
               { this.displayNotes()}        
               </div>
-            </section>
-          </section>
-        </div>
-      </div>
+          
+     
       </div>
     );
   }
