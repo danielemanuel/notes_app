@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import firebase from './firebase'; 
 import './App.css';
 
-import Header from './components/header';
-import Notes from './components/notes';
+import Header from './components/Header';
+import Notes from './components/Notes';
 
 class App extends Component {
   constructor() {
