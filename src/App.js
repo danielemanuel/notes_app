@@ -15,6 +15,7 @@ class App extends Component {
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.removeNote = this.removeNote.bind(this);
   }
 
   componentDidMount() {
@@ -58,20 +59,23 @@ class App extends Component {
     this.setState({
       title:'',
       content: ''
-     
     })
   }
 
-  removeNote(id) {
-    const noteRef = firebase.database().ref('/items/${itemId}');
+  removeNote(Id) {   
+    const noteRef = firebase.database().ref(`/notes/${Id}` );
     noteRef.remove();
   }
 
   render() {
+    console.log(this.state.notes.map(note => {
+       {note.content}
+    }))
+    console.log(this.state.notes)
     return (
       <div className="app">
        <header>
-          <Header />
+          <Header />          
        </header>
       <div className= 'container'>
         <section className= 'add-item'>
@@ -103,11 +107,13 @@ class App extends Component {
                   this.state.notes.map(note => {
                     return(
                       <Notes 
-                        key ={note.id} 
-                        title={note.title}
-                        content={note.content}
-                        />
-                    )
+                          key={note.id} 
+                          title={note.title}
+                          content={note.content}
+                          noteId= {note.id}
+                          removeNote = {() => this.removeNote(note.id) }
+                      />
+                      )
                   })
                 }
               </ul>
@@ -123,3 +129,6 @@ class App extends Component {
 }
 
 export default App;
+
+
+

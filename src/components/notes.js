@@ -8,7 +8,7 @@ export default class Notes extends Component {
                 <li>
                     <h3> { this.props.title } </h3>
                     <p> { this.props.content }</p>
-                    <button> Remove Note </button>
+                    <button onClick={this.props.removeNote}> Remove Item</button>
                 </li>
           </div>
         )
