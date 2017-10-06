@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import firebase from './firebase'; 
+import Modal from 'tg-modal';
 import './App.css';
+import SkyLight from 'react-skylight';
 
 import Header from './components/Header';
 import Notes from './components/Notes';
@@ -11,6 +13,7 @@ class App extends Component {
     this.state = {
       title: '',
       content: '',
+      isOpen: false,
       notes: []
     }
     this.handleChange = this.handleChange.bind(this);
@@ -55,6 +58,10 @@ class App extends Component {
       alert("Please fill in at least one of the fields !!!")  
       return this.setState({ title: '', content: '' })
     }
+
+    if(this.state.title === '') {
+      return this.setState({ title: '(empty note title)'})
+    }
     
     notesRef.push(note);
     this.setState({
@@ -67,12 +74,8 @@ class App extends Component {
     const noteRef = firebase.database().ref(`/notes/${Id}` );
     noteRef.remove();
   }
-
+  
   render() {
-    console.log(this.state.notes.map(note => {
-       {note.content}
-    }))
-    console.log(this.state.notes)
     return (
       <div className="app">
        <header>
@@ -101,25 +104,31 @@ class App extends Component {
             <br />
             <button> Add Note</button>
           </form>
+        
         <section className='display-item'>
+        
             <div className='wrapper'>
+            
               <ul>
                 {
                   this.state.notes.map(note => {
-                    return(
-                      <Notes 
-                          key={note.id} 
-                          title={note.title}
-                          content={note.content}
-                          noteId= {note.id}
-                          removeNote = {() => this.removeNote(note.id) }
-                      />
+                   
+                     return (                      
+                       <Notes 
+                           key={note.id} 
+                           title={note.title}
+                           content={note.content}
+                           noteId= {note.id}
+                           removeNote = {() => this.removeNote(note.id) }
+                       />
                       )
                   })
                 }
-              </ul>
+              </ul>              
             </div>
+            
           </section>
+        
         </section>
 
       </div>
@@ -133,3 +142,6 @@ export default App;
 
 
 
+
+
+                   
