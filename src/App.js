@@ -108,7 +108,7 @@ class App extends Component {
           value={this.state.content}/>
         <br />
         <br />
-        <button className='buttonAddNote' > Add Note</button>
+        <button className='buttonAddNote'> Add Note</button>
     </form>
     )
   }
@@ -122,15 +122,12 @@ class App extends Component {
     return (
       <div >
         <Header />          
-      <div className="app">       
-        
-            { this.notesForm()}
+        <div className="app">         
+          { this.notesForm()}
         </div>
-              <div className='wrapper'>
-              { this.displayNotes()}        
-              </div>
-          
-     
+        <div className='wrapper'>
+          { this.displayNotes()}        
+        </div>
       </div>
     );
   }

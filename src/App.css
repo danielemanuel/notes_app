@@ -1,3 +1,5 @@
+/* App Component */
+
 .app {
   background-size: 300px 100px,cover;
   padding: 5% 0% 5% 10%;
@@ -31,11 +33,59 @@
   display: inline-block;
   font-size: 16px;
 }
+
+  /* Notes component */
+  
+ul {
+  list-style: none;
+}
+.wrapper {
+  padding: 3% 0% 0% 2%;
+  font-family:Courier, Monaco, monospace; 
+  animation: fadein 9s;
+  -moz-animation: fadein 9s; 
+  -webkit-animation: fadein 9s; 
+  -o-animation: fadein 9s; 
+}
+.removeButton {
+  background-color: grey;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  display: inline-block;
+  font-size: 13px;
+  
+}
+
+.viewNoteButton {
+  background-color: grey;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  display: inline-block;
+  font-size: 13px;
+  
+}
+
+.divider {
+  width:5px;
+  height:auto;
+  display:inline-block;
+}
+
+.noteItem {
+  background-color: #DCDCDC;
+  padding: 3% 3% 2% 2%;
+}
+
+
 input,
 input::-webkit-input-placeholder {
     font-size: 18px;
     line-height: 3;
 }
+
+/* Header Component */
 
 .notesNavbar {
     animation: 2s ease-out 0s 2 slideInFromLeft;
@@ -48,6 +98,15 @@ input::-webkit-input-placeholder {
 .notesMessage {
   padding-left: 20%;
 }
+
+.navbar {
+  position: fixed; 
+  min-width: 20%;
+  min-height: 100%;
+}
+
+/* Home Component */
+
 .home-page {
   position: fixed; 
   min-width: 100%;
@@ -74,12 +133,6 @@ input::-webkit-input-placeholder {
 }
 .welcomeMessage {
   padding-top: 20%;
-}
-
-.navbar {
-  position: fixed; 
-  min-width: 20%;
-  min-height: 100%;
 }
 
 
