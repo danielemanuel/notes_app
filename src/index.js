@@ -10,8 +10,8 @@ import Home from './components/Home';
 ReactDOM.render(
     <BrowserRouter>
         <div>
-        <Route exact path='/' component={Home} />
-        <Route path='/notes' component={App} />
+            <Route exact path='/' component={Home} />
+            <Route path='/notes' component={App} />
         </div>
     </BrowserRouter>
     , document.getElementById('root'));

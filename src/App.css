@@ -9,3 +9,16 @@
 .content {
   
 }
+
+.home-container {
+  position: fixed; /* or absolute */
+  top: 20%;
+  left: 50%;
+  bottom: 20%;
+}
+
+.link {
+  margin-left: 20%;
+  
+}
+

@@ -52,7 +52,8 @@ class App extends Component {
     }
 
     if(this.state.title === '' && this.state.content === '' ){
-      alert("Please fill in at least one of the fields !!!")
+      alert("Please fill in at least one of the fields !!!")  
+      return this.setState({ title: '', content: '' })
     }
     
     notesRef.push(note);
