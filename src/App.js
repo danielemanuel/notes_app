@@ -14,7 +14,7 @@ class App extends Component {
     this.state = {
       title: '',
       content: '',
-      isOpen: false,
+      isOpen: false, 
       notes: []
     }
     this.handleChange = this.handleChange.bind(this);
