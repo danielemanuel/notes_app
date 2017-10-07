@@ -109,7 +109,7 @@ class App extends Component {
           value={this.state.content}/>
         <br />
         <br />
-        <button className='buttonAddNote'> Add Note</button>
+        <button className='buttonAddNote'>Add Note</button>
     </form>
     )
   }
