@@ -1,5 +1,6 @@
+'use strict'
 import React, { Component } from 'react';
-import firebase from './firebase'; 
+import firebase from './firebase';
 import Modal from 'tg-modal';
 import './App.css';
 import SkyLight from 'react-skylight';
@@ -10,11 +11,10 @@ const ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
 class App extends Component {
   constructor() {
-    super() 
+    super()
     this.state = {
       title: '',
       content: '',
-      isOpen: false, 
       notes: []
     }
     this.handleChange = this.handleChange.bind(this);
@@ -56,14 +56,14 @@ class App extends Component {
     }
 
     if(this.state.title === '' && this.state.content === '' ){
-      alert("Please fill in at least one of the fields !!!")  
+      alert("Please fill in at least one of the fields !!!")
       return this.setState({ title: '', content: '' })
     }
 
     if(this.state.title === '') {
       return this.setState({ title: '(empty note title)'})
     }
-    
+
     notesRef.push(note);
     this.setState({
       title:'',
@@ -75,10 +75,10 @@ class App extends Component {
    return( <ul>
     {
       this.state.notes.map(note => {
-       
-         return (                      
-           <Notes 
-               key={note.id} 
+
+         return (
+           <Notes
+               key={note.id}
                title={note.title}
                content={note.content}
                noteId= {note.id}
@@ -87,25 +87,25 @@ class App extends Component {
               )
           })
      }
-        </ul>  
+        </ul>
    )}
 
   notesForm() {
     return( <form onSubmit={this.handleSubmit} >
-        <input 
-          className='title' 
-          type='text' 
+        <input
+          className='title'
+          type='text'
           name='title'
           placeholder='Insert title...'
           onChange={this.handleChange}
           value={this.state.title} />
           <br /><br />
-        <input  
-          className='content' 
-          type='text' 
-          name='content' 
+        <input
+          className='content'
+          type='text'
+          name='content'
           placeholder='Insert content...'
-          onChange={this.handleChange} 
+          onChange={this.handleChange}
           value={this.state.content}/>
         <br />
         <br />
@@ -114,20 +114,20 @@ class App extends Component {
     )
   }
 
-  removeNote(Id) {   
+  removeNote(Id) {
     const noteRef = firebase.database().ref(`/notes/${Id}` );
     noteRef.remove();
   }
-  
+
   render() {
     return (
       <div >
-        <Header />          
-        <div className="app">         
+        <Header />
+        <div className="app">
           { this.notesForm()}
         </div>
         <div className='wrapper'>
-          { this.displayNotes()}                  
+          { this.displayNotes()}
         </div>
       </div>
     );
@@ -135,9 +135,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-
-
-
-                   
