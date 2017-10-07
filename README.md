@@ -22,6 +22,7 @@
 - data persists on the UI, data is stored in firebase database
 - CSS for styling the app
 
+
 ##### Home page
 
   ![home_page](/images/homepage.png)
@@ -46,4 +47,5 @@
 - implement more animations of components with CSSTRANSITIONGROUP package
 - notes , add note form , updateform; all of these components will have their own route, when the user adds a note will be automatically redirected to the list of notes page
 - for creating the form I will import the Redux Form, an awesome package that makes your work much easier and handling errors is very easy 
+- for even better UI I would use Material-UI from React_JS
 - last: a very very very great looking interface ;)
