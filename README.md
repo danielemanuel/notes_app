@@ -42,7 +42,8 @@
 
 - add a user authentication system, the notes can be seen by all users but only a registered user can add and delete a note
 - user can update the note
-- import the Font Awesome module to make the UI much interesting
+- import the Font Awesome module to make the UI more interesting
 - implement more animations of components with CSSTRANSITIONGROUP package
 - notes , add note form , updateform; all of these components will have their own route, when the user adds a note will be automatically redirected to the list of notes page
+- for creating the form I will import the Redux Form, an awesome package that makes your work much easier and handling errors is very easy 
 - last: a very very very great looking interface ;)
