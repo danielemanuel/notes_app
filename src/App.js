@@ -1,13 +1,12 @@
 'use strict'
 import React, { Component } from 'react';
 import firebase from './firebase';
-import Modal from 'tg-modal';
 import './App.css';
 import SkyLight from 'react-skylight';
 
 import Header from './components/Header';
 import Notes from './components/Notes';
-const ReactCSSTransitionGroup = require('react-addons-css-transition-group');
+
 
 class App extends Component {
   constructor() {
@@ -72,7 +71,8 @@ class App extends Component {
   }
 
   displayNotes() {
-   return( <ul>
+   return( 
+        <ul>
     {
       this.state.notes.map(note => {
 

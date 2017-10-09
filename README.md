@@ -12,6 +12,11 @@
 ```
 - npm test
 ```
+
+##### App wireframe
+
+  ![wireframe](/images/wireframe.png)
+
 ### App functionality
 
 - the app is build using create-react-app
@@ -46,6 +51,6 @@
 - import the Font Awesome module to make the UI more interesting
 - implement more animations of components with CSSTRANSITIONGROUP package
 - notes , add note form , updateform; all of these components will have their own route, when the user adds a note will be automatically redirected to the list of notes page
-- for creating the form I will import the Redux Form, an awesome package that makes your work much easier and handling errors is very easy 
+- for creating the form I will import the Redux Form, an awesome package that makes your work much easier and handling errors is very easy
 - for even better UI I would use Material-UI from React_JS
 - last: a very very very great looking interface ;)
